@@ -1,0 +1,302 @@
+@font-face {
+    font-family: main;
+    src: url(../fonts/Game\ Of\ Squids.ttf);
+}
+
+@font-face {
+    font-family: secondary;
+    src: url(../fonts/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+    user-select: none;
+    width: 100%;
+    height: 100vh;
+}
+
+main{
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(to top, #D72D5C, #491F4D);
+    display: flex;
+    &::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(to left, black 30%, transparent);
+    }
+    >section{
+        height: 100vh;
+        width: 50%;
+        /* border: 1px solid blue; */
+        position: relative;
+        z-index: 1000;
+        &:nth-of-type(1){
+            z-index: 1001;
+            display: flex;
+            justify-content: end;
+            >figure{
+                height: 100%;
+                display: flex;
+                >img{
+                    display: flex;
+                    height: 100vh;
+                    object-fit: cover;
+                }
+            }
+        }
+        &:nth-of-type(2){
+            display: flex;
+            flex-wrap: wrap;
+            >div{
+                width: 100%;
+                height: 60%;
+                &:nth-of-type(1){
+                    height: 40%;
+                }
+                >h1{
+                    font-family: main;
+
+                    color: white;
+                    transform: translateX(-20%);
+                    position: relative;
+                    z-index: 10;
+                    word-spacing: -30%;
+                }
+                &:nth-of-type(2){
+                    display: flex;
+                    align-items: center;
+                    >.TicTacToe{
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-evenly;
+                        align-content: space-evenly;
+                        position: relative;
+                        >.credit{
+                            position: absolute;
+                            top: -20%;
+                            left: 60%;
+                            font-family: main;
+                            color: white;
+                            display: block;
+                            pointer-events: none;
+                            display: flex;
+                            >span{
+                                font-size: inherit;
+                                color: #D72D5C;
+                            }
+                        }
+                        >.ply1{
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            font-family: main;
+                            color: white;
+                            display: block;
+                            pointer-events: none;
+                        }
+                        >.ply2{
+                            position: absolute;
+                            top: 50%;
+                            right: 0;
+                            font-family: main;
+                            color: white;
+                            display: inline;
+                            pointer-events: none;
+                        }
+                        >.drw{
+                            position: absolute;
+                            left: 50%;
+                            top: 115%;
+                            font-family: main;
+                            color: white;
+                            display: inline;
+                            pointer-events: none;
+                        }
+                        >div{
+                            width: 28%;
+                            height: 28%;
+                            border-radius: 50%;
+                            border: 5px solid rgba(255, 255, 255, 0.155);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 50px;
+                            font-family: main;
+                            color: white;
+                            cursor: pointer;
+                            >span{
+                                pointer-events: none;
+                                font-family: main;
+                                font-size: 50px;
+                                color: rgba(255, 255, 255, 0.472);
+                            }
+                        }
+                        >span{
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            display: none;
+                            >span{
+                                display: flex;
+                                align-items: center;
+                                margin-right: 10px;
+                                font-family: main;
+                                font-size: 85px;
+                                color: #E73d7E;
+                            }
+                            >h2{
+                                font-family: secondary;
+                                font-size: 55px;
+                                color: white;
+                                text-transform: uppercase;
+                                letter-spacing: 3px;
+                                display: flex;
+                                align-items: center;
+    
+                            }
+                        }
+                        >button{
+                            display: none;
+                            margin-top: 10px;
+                            width: 80%;
+                            font-size: 25px;
+                            font-family: secondary;
+                            font-weight: bold;
+                            display: none;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 5px;
+                            padding-block: 12px;
+                            border-radius: 15px;
+                            >span{
+                                font-size: 40px;
+                                color: #E73d7E;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 0px) {
+    body{
+        position: relative;
+        >div{
+            z-index: 10000000000000000000000000000000000;
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-family: main;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body{
+        position: relative;
+        >div{
+            display: none;
+        }
+    }
+    .title{
+        font-size: 75px;
+    }
+    .mainIMG{
+        transform: scale(1) translateX(0%);
+    }
+    .TicTacToe{
+        width: 250px;
+        height: 250px;
+        margin-left: 120px;
+    }
+    .credit{
+        font-size: 12px;
+        transform: translateX(-58%);
+    }
+    .ply1{
+        font-size: 13px;
+        transform: translate(-35%, -50%);
+    }
+    .ply2{
+        font-size: 13px;
+        transform: translate(105%, -50%);
+    }
+    .drw{
+        font-size: 13px;
+        transform: translate(-9%, -90%);
+    }
+}
+@media screen and (min-width: 1280px) {
+    .title{
+        font-size: 95px;
+    }
+    .mainIMG{
+        transform: scale(1.05) translateX(-10%);
+    }
+    .TicTacToe{
+        width: 300px;
+        height: 300px;
+        margin-left: 100px;
+    }
+    .credit{
+        font-size: 14px;
+        transform: translateX(-56%);
+    }
+    .ply1{
+        font-size: 17px;
+        transform: translate(-40%, -50%);
+    }
+    .ply2{
+        font-size: 17px;
+        transform: translate(105%, -50%);
+    }
+    .drw{
+        font-size: 17px;
+        transform: translate(-11%, -90%);
+    }
+}
+@media screen and (min-width: 1536px) {
+    .title{
+        font-size: 110px;
+    }
+    .mainIMG{
+        transform: scale(1.1) translateX(-10%);
+    }
+    .TicTacToe{
+        margin-left: 110px;
+    }
+    .credit{
+        font-size: 14px;
+        transform: translateX(-58%);
+    }
+    .ply1{
+        font-size: 17px;
+        transform: translate(-40%, -50%);
+    }
+    .ply2{
+        font-size: 17px;
+        transform: translate(105%, -50%);
+    }
+    .drw{
+        font-size: 17px;
+        transform: translate(-11%, -90%);
+    }
+}
